@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+
+
+    <title>AnimationStudents</title>
+</head>
+
+  <body>
+
+    <header>
+      <div class="container">
+
+        <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html"><img src="images/Logo_UNITEC.png" alt="Logo Terceto" class="img-fluid" width="10%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+        </ul>
+
+        <ul class="navbar-nav ml-auto lista-redes">
+          <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-twitter"></i></a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-instagram"></i></a>
+          </li>
+        </ul>
+        </div>
+      </nav>
+
+      </div>
+    </header>
+
+    <section id="Formulario">
+      <div class="container">
+
+        <!--<button class="open-button" onclick="openForm()">Open Form</button>-->
+
+        <div id="myForm">
+          <ul>
+          <form method="post" action="index.php" class="form-container" enctype="multipart/form-data">
+            <h1>Nuevo Registro</h1>
+            <h6>Para registrarse recuerde que debe ser estudiante activo de UNITEC.</h6>
+            <li><label for="nombre"><b>Nombre</b></label>
+            <input type="text" placeholder="Ingrese nombre" name="nombre" required></li>
+
+            <label for="apellido"><b>Apellido</b></label>
+            <input type="text" placeholder="Ingrese apellido" name="apellido" required>
+
+            <label for="Email"><b>Correo electrónico</b></label>
+            <input type="text" placeholder="Ingrese Email" name="Email" required>
+
+            <label for="Usuario"><b>Núnmero de Número de teléfono</b></label>
+            <input type="text" placeholder="Ingrese Usuario" name="Usuario" required>
+
+            <label for="Contraseña"><b>Contraseña</b></label>
+            <input type="text" placeholder="Ingrese Contraseña" name="Contraseña" required>
+
+            <label for="Contraseña"><b>Confirmar contraseña</b></label>
+            <input type="text" placeholder="Ingrese Contraseña" name="Contrasena_confirm" required>
+
+            <button type="submit" name="enviar" value="submit" class="btn">REGÍSTRATE</button>
+          </form>
+        </ul>
+        </div>
+
+
+
+      </div>
+    </section>
+
+  </body>
+
+</html>

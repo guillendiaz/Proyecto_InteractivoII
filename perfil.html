@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/styles_main.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <title>Perfil</title>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="columnaizquierda">
+            <div id="menuizquierda">
+                <div id="menuizquni">
+                    <a href="main.html"><img src="images/Logo_UNITEC.png" class="logoMain"></a>
+                </div>
+
+
+                <!--Perfil Columna Derecha-->
+                <div id="menuizqperfil">
+                    <img src="images/baba.jpg" class="imgUsuario"> <i class="fas fa-pen"></i><br>
+                    <h1 class="nombre">Linda Donaire</h1>
+                </div>
+                <!--Perfil Columna Derecha-->
+
+
+                <!--Botones Opciones-->
+                <div id="menuizqopciones" class="row">
+                    <article class="col-12">
+                        <button href="perfil.html" class="botonizq">VER PERFIL</button>
+                    </article>
+                    <article class="col-12">
+                        <button class="botonizq" id="publicacionBTN">
+                            <i class="fas fa-plus"></i>NUEVA PUBLICACIÓN
+                        </button>
+                    </article>
+                </div>
+            </div>
+            <!--Botones Opciones-->
+
+            <!--Boton Salir-->
+            <a href="#" onclick="botonSalir()"><i class="fas fa-sign-out-alt"></i></a>
+            <!--Boton Salir-->
+        </div>
+
+        <div id="ventanaSalir" class="modal" style="display: none;">
+            <div class="contenidoSalir">
+                <h4>¿Estás seguro que quieres cerrar sesión?</h4>
+                <div class="opcionesSalir">
+                    <a href="index.html" class="botonSi">SI</a><a onclick="botonSalir()" href="#" class="botonNo">NO</a>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div id="ventanaPublicar">
+                <div class="content">
+                    <div class="container">
+                        <div class="borde">
+                            <h1>Nueva Publicación</h1>
+                        </div>
+                        <div class="agregarArchivo borde">
+
+
+                            <img class="imgPublicar" src="images/ejemplo1.png" alt="placeholder">
+
+
+                            <img class="imgPublicar" src="images/ejemplo2.png" alt="placeholder">
+
+                            <button class="seleccionarArchivo">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+
+                        </div>
+                        <div class="borde descripcionInput">
+                            <input type="text" name="Descripción" placeholder="Descripción..."> <p><i class="fas fa-laugh"></i></p>
+                        </div>
+                        <div class="publicarCancelar">
+                            <input href="#" type="submit" value="Cancelar" class="btn-red cerrar">
+                            <input href="#" type="submit" value="Publicar" class="btn-blue">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!----Columna Central de Pagina---->
+        <div id="columnacentral">
+            <div id="espacioseguro">
+
+            </div>
+
+            <!----Perfil---->
+            <div class="perfilmain">
+                <div class="cont-perfil">
+                    <div class="perfilbanner">
+                        <img src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/Purina%C2%AE%20La%20llegada%20del%20gatito%20a%20casa.jpg?itok=_3VnSPSl" id="profban">
+                    </div>
+                    <div class="perfildetalles">
+                        <div class="perfilfoto">
+                            <img src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/Purina%C2%AE%20La%20llegada%20del%20gatito%20a%20casa.jpg?itok=_3VnSPSl" id="profpic">
+                        </div>
+                        <div class="perfilnombre">
+                            <p class="nombre">Gatito Minino</p>
+                        </div>
+                            <a class="perfilpublicaciones">
+                            <span class="publicacionesNum">0</span>
+                            <p>Publicaciones</p>
+                            </a>
+                            <a class="perfilseguidores">
+                                <span class="publicacionesNum">0</span>
+                                <p>Seguidores</p>
+                            </a>
+                            <a class="perfilseguidos">
+                                <span class="publicacionesNum">0</span>
+                                <p>Seguidos</p>
+                            </a>
+                    </div>
+                    <dl class="perfilbio">
+                        <dt class="carrera">Animación Digital y Diseño</dt>
+                        <dt>Campus:</dt> <dd class="Campus">San Pedro Sula</dd>
+                        <dt>Número:</dt> <dd class="numero">+504 0000 0000</dd>
+                        <dt>Programas:</dt> <dd class="programas">Blender, Photoshop y Adobe After Effects.</dd>
+                        <a href='editarPerfil.html' class="botonizq">Editar</a>
+                    </dl>
+                    <!----Perfil---->
+
+                    <!----Publicaciones en Perfil---->
+                    <div id="perfilposts">
+
+                        <div class="publicacion">
+                            <div class="cont-publicacion profilepost">
+                                <div class="contenido">
+                                    <img src="images/Haslin.png" class="contenidoImg">
+                                </div>
+                                <p>Contenido de comentario del publicador.</p>
+                                <div class="flex-container iconos">
+                                    <i class="fas fa-comment-dots icono"></i>
+                                    <h1 class="texto-icono">522</h1>
+                                    <div class="flex-container emotes">
+                                        <i class="fas fa-heart"></i>
+                                        <span class="emotesrow"><i class="fas fa-heart"></i> <i class="fas fa-thumbs-up"></i> &#128562; &#128518;</span>
+                                    </div>
+                                    <h1 class="texto-icono">5k</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publicacion">
+                            <div class="cont-publicacion profilepost">
+                                <div class="contenido">
+                                    <img src="images/Haslin.png" class="contenidoImg">
+                                </div>
+                                <p>Contenido de comentario del publicador.</p>
+                                <div class="flex-container iconos">
+                                    <i class="fas fa-comment-dots icono"></i>
+                                    <h1 class="texto-icono">522</h1>
+                                    <div class="flex-container emotes">
+                                        <i class="fas fa-heart"></i>
+                                        <span class="emotesrow"><i class="fas fa-heart"></i> <i class="fas fa-thumbs-up"></i> &#128562; &#128518;</span>
+                                    </div>
+                                    <h1 class="texto-icono">5k</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!----Publicaciones en Perfil---->
+
+                </div>
+            </div>
+        </div>
+        <!----Columna Central de Pagina---->
+
+        <div id="columnaderecha">
+            <div id="menuderecha">
+                <!----Barra de Busqueda---->
+                <div id="menuderbusqueda">
+                    <i class="fas fa-search"></i><input id="taskInput" type="text" placeholder="Buscar...">
+                </div>
+                <!----Barra de Busqueda---->
+
+
+                <div id="menudersugerencias">
+                    <!----Sugerencias de Personas---->
+                    <div id="mdspersonas">
+                        <h6>SUGERENCIAS PARA TI</h6>
+                        <div class="mdspersonas row">
+                            <article class="col-md-2">
+                                <img src="images/baba.jpg" class="imgSugerencia" alt="sugerencia">
+                            </article>
+                            <article class="col-md-5 personas">
+                                Naima Roig
+                            </article>
+                            <article class="col-md-5">
+                                <a class="botonder">SEGUIR</a>
+                            </article>
+                        </div>
+                    </div>
+                    <!----Sugerencias de Personas---->
+
+
+
+                    <!----Sugerencias de Tags---->
+                    <div id="mdstags">
+                        <h6>EXPLORAR TAGS</h6>
+                        <div class="mdstags row">
+                            <article class="col-md-7">
+                                #Modelado3D
+                            </article>
+                            <article class="col-md-5">
+                                <a class="botonder">SEGUIR</a>
+                            </article>
+
+                            <article class="col-md-7">
+                                #Dibujo
+                            </article>
+                            <article class="col-md-5">
+                                <a class="botonder">SEGUIR</a>
+                            </article>
+
+                            <article class="col-md-7">
+                                #Animacion2D
+                            </article>
+                            <article class="col-md-5">
+                                <a class="botonder">SEGUIR</a>
+                            </article>
+
+                            <article class="col-md-7">
+                                #Ilustracion
+                            </article>
+                            <article class="col-md-5">
+                                <a class="botonder">SEGUIR</a>
+                            </article>
+                        </div>
+                    </div>
+                    <!----Sugerencias de Tags---->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        function botonSalir() {
+            var x = document.getElementById("ventanaSalir");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

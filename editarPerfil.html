@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/styles_main.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Editar Perfil</title>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="columnaizquierda">
+            <div id="menuizquierda">
+                <div id="menuizquni">
+                    <img src="images/Logo_UNITEC.png" class="logoMain">
+                </div>
+                <div id="menuizqperfil">
+                   
+                </div>
+                <div id="menuizqopciones">
+                   
+                </div>
+            </div>
+        </div>
+        <div id="columnacentral" class="editarPerfil">
+            <div id="espacioseguro" class="nuevoAlto">
+
+            </div>
+            <div class="publicacion">
+                <div id="headerEdit">
+                    Editar Perfil
+                </div>
+                    <div class="cont-perfil">
+
+                         <div id="editarImagenes">
+                             <div class="profile-pic">
+                                 <label class="-label" for="file">
+                                     <span class="glyphicon glyphicon-camera"></span>
+                                     <span>Change Image</span>
+                                 </label>
+                                 <input id="file" type="file" onchange="loadFile(event)"/>
+                                 <img src="https://cdn.pixabay.com/photo/2017/08/06/21/01/louvre-2596278_960_720.jpg" id="output" width="200" />
+                             </div>
+
+                             <div class="profile-banner">
+                                 <label class="-labelBanner" for="file">
+                                     <span class="glyphicon glyphicon-camera"></span>
+                                     <span>Change Image</span>
+                                 </label>
+                                 <input id="fileBanner" type="fileBanner" onchange="loadFileBanner(event)"/>
+                                 <img src="https://cdn.pixabay.com/photo/2017/08/06/21/01/louvre-2596278_960_720.jpg" id="outputBanner" width="200" />
+                             </div>
+                           <!-- <img class="ProfilePic" src="https://i.pinimg.com/originals/3f/0d/51/3f0d51c95a2bd3a2fc633fd44b78c2bb.jpg">-->
+                        </div>
+
+                        <!--<div id="editarBanner">
+
+                             <img class="ProfilePic" src="https://i.pinimg.com/originals/3f/0d/51/3f0d51c95a2bd3a2fc633fd44b78c2bb.jpg">
+                        </div>  -->
+
+
+                        <div id="editarInfo">
+                            <!-- https://codepen.io/azazy/pen/EgdXxG -->
+                            <div id="opcionesEdit">
+                            Estado de estudio
+                            <br>
+                                <form action="/action_page.php">
+                                    <select id="estadoEstudio" name="estadoEstudio">
+                                        <option value="Activo">Activo</option>
+                                        <option value="Inactivo">Inactivo</option>
+                                    </select>
+                                </form>
+                                <br>
+                                <form action="/action_page.php">
+                                  <label for="campus">Campus:</label><br>
+                                  <select id="campus" name="campus">
+                                    <option value="Tegus">Tegucigalpa</option>
+                                    <option value="SPS">San Pedro Sula</option>
+                                  </select>
+                                </form>
+                                <br>
+                            Numero de celular
+                            <br>
+                            <input id="numCelular"  type="number" name="numCelular"  placeholder="5555-5555"  maxlength="8">
+                                <br>
+                                <br>
+                                
+                                Softwares
+                               
+                                <div class="row">
+                                    <form class="UserTags">
+                                        <div class="column">
+                                            <input type="checkbox" id="Blender" name="Blender" value="Blender">
+                                            <label for="Blender">Blender</label>
+                                            <br>
+                                            <input type="checkbox" id="Unity" name="Unity" value="Unity">
+                                            <label for="Unity">Unity</label>
+                                            <br>
+                                            <input type="checkbox" id="AdobePS" name="AdobePS" value="AdobePS">
+                                            <label for="AdobePS">Adobe Photoshop</label>
+                                        </div>
+                                        <div class="column">
+                                            <input type="checkbox" id="AdobeAi" name="AdobeAi" value="AdobeAi">
+                                            <label for="AdobeAi">Adobe Illustrator</label>
+                                            <br>
+                                            <input type="checkbox" id="AdobeAn" name="AdobeAn" value="AdobeAn">
+                                            <label for="AdobeAn">Adobe Animate</label>
+                                            <br>
+                                            <input type="checkbox" id="Maya" name="Maya" value="Maya">
+                                            <label for="Maya">Maya</label>
+                                        </div>
+                                        <div class="column">
+                                            <input type="checkbox" id="PaintTS" name="PaintTS" value="PaintTS">
+                                            <label for="PaintTS">Paint Tool Sai</label>
+                                            <br>
+                                            <input type="checkbox" id="CorelPainter" name="CorelPainter" value="CorelPainter">
+                                            <label for="CorelPainter">Corel Painter</label>
+                                            <br>
+                                            <input type="checkbox" id="Substance" name="Substance" value="Substance">
+                                            <label for="Substance">Substance</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <br>
+                                <br>
+
+                                 <div class="flex-container">
+                                    <button onclick="location.href='perfil.html'" class="BotonCancelar" type="button">Cancelar</button>
+                                    <button class="BotonGuardar" type="button">Guardar</button>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+            </div>
+
+        </div>
+        <div id="columnaderecha">
+           <div id="menuderecha">
+                
+                <div id="menuderbusqueda">
+                    <i class="fas fa-search"></i><input id="taskInput" type="text" placeholder="Buscar...">
+                </div>
+                <div id="menudersugerencias">
+                    <div id="mdspersonas">
+                        <h6>SUGERENCIAS PARA TI</h6>
+                        <dl class="mdspersonas">
+                            <dt>
+                                <img src="images/baba.jpg" class="imgSugerencia" alt="sugerencia"> Naima Roig <a class="botonder">SEGUIR</a>
+                            </dt>
+                        </dl>
+
+                    </div>
+                    <div id="mdstags">
+                        <h6>EXPLORAR TAGS</h6>
+                        <dl class="mdstags">
+                            <dt> #Modelado3D <a class="botonder">SEGUIR</a></dt>
+                            <dt>#Dibujo <a class="botonder">SEGUIR</a></dt>
+                            <dt>#Animacion2D <a class="botonder">SEGUIR</a></dt>
+                            <dt>#Ilustracion <a class="botonder">SEGUIR</a></dt>
+                        </dl>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script_editarP.js"></script>
+</body>
+</html>
