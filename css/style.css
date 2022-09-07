@@ -57,28 +57,53 @@ a{
 
 
 /*--------------------------------SIDEBAR IZQUIERDA---------------------------------*/
+ nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 70%;
+    background-color: #fff;
+    width: 8%;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 15px;
+    border-right: solid 0px #BCBCBC;
+    border-bottom: solid 0px #BCBCBC;
+    z-index: 10;
+ }
+ nav:hover{
+    width: 15%;
+    transition: all 0.5s ease;
+ }
+
  
- #navbar-side:hover{
-    width: 280px;
-    transition: all 0.5s ease;
+
+ 
+ .fotop{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    align-content: center;
+    overflow: hidden;
  }
 
- .logo{
+ .usn {
+    overflow: hidden;
+    width: 100%;
+    height: 30px;
     text-align: center;
-    display: flex;
-    transition: all 0.5s ease;
-    margin-left: 22px;
-    margin-bottom: 15px;
+    align-content: center;
  }
 
- .logo span{
-    margin-left: 25px;
-    text-decoration: none;
+ .usn h4{
+    font-size: 30px;
+    color: black;
  }
- .logo img{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+
+ .usn h4:hover{
+    opacity: 1;
+    color: fuchsia;
  }
 
  .icon-sidebar{
@@ -87,7 +112,7 @@ a{
     font-size: 14px;
     display: table;
     width: 300px;
-    padding: 10px; 
+    padding: 10px;
  }
  .icon-sidebar:hover{
     background: #eee;
@@ -103,7 +128,7 @@ a{
     flex-direction: row;
     margin: 21px 3px 36px 7px;
  }
- #navbar-side .fas{
+ nav .fas{
     position: relative;
     width: 70px;
     height: 40px;
@@ -112,12 +137,15 @@ a{
     text-align: center;
     color: #BCBCBC;
  }
- 
  .nav-item{
     position: relative;
     color: #3B5F94;
     top: 12px;
-    margin-left: 10px;  
+    margin-left: 10px;
+ }
+ .log-out{
+    position: absolute;
+    bottom: 20px;
  }
  .logo-text{
     width: 65%;
@@ -137,11 +165,12 @@ a{
     top: 0;
     bottom: 0;
     right: 0;
-    height: 100%;
+    height: 50%;
+    background-color: #fff;
     width: 17%;
-    background-color: white;
     overflow: hidden;
     transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgb(0 0 0 / 10%);
     border-radius: 0 0 0 15px;
     border-right: solid 0px #BCBCBC;
     border-bottom: solid 0px #BCBCBC;
@@ -171,7 +200,55 @@ a{
 /*---------------------------------------Historias---------------------------------------*/
 
 #historias{
-    padding: 27px 0;
+    background-color: #B8E7F6;
+    margin: 30px;
+}
+
+.pfoto{
+    border-radius: 60%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+}
+
+.pfoto img{
+    width: 100%;
+    height: 20px;
+    top: -25px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 15%;
+  height: 200px;
+  margin-right: 5px;
+  background: #8C8;
+  border-radius: 5px;
+    overflow: hidden;
+}
+.carousel-cell img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-cell.is-selected {
+  background: #ED2;
+}
+
+/* cell number */
+
+@media only screen and (max-width: 991px){
+    .carousel-cell{
+        width: 50%;
+    }
 }
 
 /*--------------------------------------Publicacion-------------------------------------*/
@@ -188,10 +265,8 @@ a{
     margin-top: 20px;
 }
 .post-img{
-    padding: 200px 0;
     background-color: #e1e1e1;
     border-radius: 20px;
-    margin: 22px 0;
 }
 .post-comments{
     display: flex;
@@ -221,46 +296,13 @@ a{
 
 /*---------------------------------carousel---------------------------------*/
 
-@media (max-width: 767px) {
-        .carousel-inner .carousel-item > div {
-            display: none;
-        }
-        .carousel-inner .carousel-item > div:first-child {
-            display: block;
-        }
-    }
-
-    .carousel-inner .carousel-item.active,
-    .carousel-inner .carousel-item-next,
-    .carousel-inner .carousel-item-prev {
-        display: flex;
-    }
-
-    /* medium and up screens */
-    @media (min-width: 768px) {
-
-        .carousel-inner .carousel-item-end.active,
-        .carousel-inner .carousel-item-next {
-            transform: translateX(25%);
-        }
-
-        .carousel-inner .carousel-item-start.active, 
-        .carousel-inner .carousel-item-prev {
-            transform: translateX(-25%);
-        }
-    }
-
-    .carousel-inner .carousel-item-end,
-    .carousel-inner .carousel-item-start { 
-        transform: translateX(0);
-    }
 
 /*-----------------------------------------------FEED---------------------------------------------------*/
 #columnacentral{
     height: 100vh;
     width: 72%;
     margin-left: 11%;
-    margin-right: 100% !important;
+    margin-right: 17%;
     background-color: #EDEDED;
     flex-direction: column;
     overflow-x: hidden;
@@ -295,21 +337,21 @@ a{
     border-style: solid;
     border-color: #707070;
     border-width: thin;
-    
+
 }
 
 
 /*---------------------------scrollbar---------------------------*/
 
  ::-webkit-scrollbar {
-    width: 10px;
+    width: 17px;
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
     width: 34px;
 }
-  
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: white;
@@ -318,7 +360,7 @@ a{
     border-width: thin;
     border-color: #707070;
 }
-  
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 }
@@ -338,74 +380,3 @@ a{
     border: none;
 }
 /*-----------------------------------------------MOBILE----------------------------------------------------------*/
-
-@media (max-width: 768px){
-    #navbar-side{
-    background-color: #000;
-    position: absolute;
-    z-index: 11;
-    width: 100%;
-    height: 90px;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    align-items: center;
-}
-    #navbar-side:hover{
-    background-color: #000;
-    position: absolute;
-    z-index: 11;
-    width: 100%;
-    height: 90px;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    align-items: center;
-    }
-    #navbar-side ul{
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    width: 165%;
-    }
-    #navbar-side li{
-    display: flex;
-    flex-direction: column;
-    height: 75px;
-    width: 90px;
-    justify-content: center;
-    overflow: hidden;
-    margin: auto;
-    }
-
-}
-
-@media (min-width: 768px){
-     #navbar-side{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    background-color: #fff;
-    width: 90px;
-    overflow: hidden;
-    transition: width 0.2s linear;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 15px;
-    border-right: solid 0px #BCBCBC;
-    border-bottom: solid 0px #BCBCBC;
-    z-index: 10;
- }
-  .log-out{
-    position: absolute;
-    bottom: 20px;
- }
-}
-
-
-
-
-
-
