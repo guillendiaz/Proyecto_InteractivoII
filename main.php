@@ -34,7 +34,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <!--Flickkity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 
     <title>AnimationStudents</title>
@@ -49,10 +50,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="perfil.html" class="logo">
-                         <img src="<?php echo $fileSRC;?>" class="img-fluid">
-                         <span class="nav-item"><h4><?php echo $Nombre." ".$Apellido;?></h4></span>
-                    </a>
+                        <div class="fotop"><img src="<?php echo $fileSRC;?>" class="img-fluid"></div>
+                        <div class="usn"><a href="index.php" class="logo">
+                        <h4><?php echo $Nombre." ".$Apellido;?></h4>
+                        </a></div>
+                        
                 </li>
                 <li><a href="#" class="icon-sidebar">
                     <i class="fas fa-home"></i>
@@ -231,96 +233,26 @@
             <!----------------------------------------Historias------------------------------------------>
 
             <section id="historias">
+              <div class="carousel">
+                <div class="carousel-cell">
+                    <img src="images/baba.jpg" class="img-fluid hfoto" alt="historia">
+                </div>
+                <div class="carousel-cell">
+                    <img src="images/box.jpg" alt="historia">
+                     <div class="pfoto"><img src="images/Haslin.png" class="img-fluid" alt="gay"></div>
+                </div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+              </div>
 
-                   <div class="container-fluid">
-                       <div class="container text-center">
-                           <div class="row mx-auto my-auto justify-content-center">
-                               <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-                                   <div class="carousel-inner" role="listbox">
-                                       <div class="carousel-item active">
-                                           <div class="col-md-3">
-                                               <div class="card">
-                                                   <div class="card-img">
-                                                       <img src="images/schmebulok.jpg" class="img-fluid">
-                                                   </div>
-                                                   <div class="card-img-overlay">Slide 1</div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="carousel-item">
-                                           <div class="col-md-3">
-                                               <div class="card">
-                                                   <div class="card-img">
-                                                       <img src="images/schmebulok.jpg" class="img-fluid">
-                                                   </div>
-                                                   <div class="card-img-overlay">Slide 2</div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="carousel-item">
-                                           <div class="col-md-3">
-                                               <div class="card">
-                                                   <div class="card-img">
-                                                       <img src="images/schmebulok.jpg" class="img-fluid">
-                                                   </div>
-                                                   <div class="card-img-overlay">Slide 3</div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="carousel-item">
-                                           <div class="col-md-3">
-                                               <div class="card">
-                                                   <div class="card-img">
-                                                       <img src="images/schmebulok.jpg" class="img-fluid">
-                                                   </div>
-                                                   <div class="card-img-overlay">Slide 4</div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="carousel-item">
-                                           <div class="col-md-3">
-                                               <div class="card">
-                                                   <div class="card-img">
-                                                       <img src="images/schmebulok.jpg" class="img-fluid">
-                                                   </div>
-                                                   <div class="card-img-overlay">Slide 5</div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="carousel-item">
-                                           <div class="col-md-3">
-                                               <div class="card">
-                                                   <div class="card-img">
-                                                       <img src="images/schmebulok.jpg" class="img-fluid">
-                                                   </div>
-                                                   <div class="card-img-overlay">Slide 6</div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="carousel-item">
-                                           <div class="col-md-3">
-                                               <div class="card">
-                                                   <div class="card-img">
-                                                       <img src="images/schmebulok.jpg" class="img-fluid">
-                                                   </div>
-                                                   <div class="card-img-overlay">Slide 7</div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                                   <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-                                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                   </a>
-                                   <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-                                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                   </a>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-
-              </section>
-
+            </section>
 
 
         <!---------------------------------------------------Feed-------------------------------------------------->
@@ -392,45 +324,6 @@
 
                       $conn->close();
                       ?>
-  <!--                  <div class="container publicacion">
-                            <div class="row post-header">
-                                <article class="col-2">
-                                    <img src="images/baba.jpg" class="img-fluid post-profile" alt="Profile-user">
-                                </article>
-                                <article class="col-10">
-                                        <h1 class="titulo">Nombre Generico</h1>
-                                        <p>Aqui va el texto para el post #blessed #GOAT</p>
-                                </article>
-                            </div>
-                            <div class="post-img">
-                                <img src="">
-                            </div>
-
-                            <div class="container post-comments">
-                                <i class="fas fa-heart"></i> <p>reacciones</p> <i class="fas fa-thumbs-up"></i> <p>comments</p>
-                            </div>
-                        </div>
-
-                       <div class="container publicacion">
-                            <div class="row post-header">
-                                <article class="col-2">
-                                    <img src="images/baba.jpg" class="img-fluid post-profile" alt="Profile-user">
-                                </article>
-                                <article class="col-10">
-                                        <h1 class="titulo">Nombre Generico</h1>
-                                        <p>Aqui va el texto para el post #blessed #GOAT</p>
-                                </article>
-                            </div>
-                            <div class="post-img">
-                                <img src="">
-                            </div>
-
-                            <div class="container post-comments">
-                                <i class="fas fa-heart"></i> <p>reacciones</p> <i class="fas fa-thumbs-up"></i> <p>comments</p>
-                            </div>
-                        </div> -->
-
-
                </section>
             </section>
 
@@ -441,6 +334,17 @@
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script>
+        
+        $(".carousel").flickity({
+            cellAlign: 'left', //cuandp empieza, empieza a la derecha
+            wrapAround: true, //significa que es un loop
+            freeScroll: true
+        });
+
+    </script>
 
 </body>
 </html>
