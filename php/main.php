@@ -42,7 +42,7 @@
                               $result3 = $conn->query($query3);
                               if (!$result3) die("Fatal Error");
                               $rowF = $result3->fetch_array(MYSQLI_ASSOC);
-                              $fotoU = $rowF['foto'];
+                              //$fotoU = $rowF['foto'];
 
                               //Agarrar nombre apellido y numero de cuenta de tabla de usuarios
                               $query2 = "SELECT nombre, apellido, num_cuenta FROM usuarios WHERE ID = '$uD'";
