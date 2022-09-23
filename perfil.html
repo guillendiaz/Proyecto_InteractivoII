@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <?php include('php/main.php'); ?>
     
     <title>Perfil</title>
 </head>
 <body>
 	<!------------------------------sidebar ------------------- Angelica----------------------------------->
-<nav id="navbar-side">
+	<nav id="navbar-side">
             <ul>
                 <li>
                     <a href="main.html" class="logo-sidebar">
@@ -21,8 +23,8 @@
                 </li>
                 <li class="nav-1">
                     <a href="perfil.html" class="logo">
-                         <img src="images/baba.jpg" class="img-fluid">
-                         <span class="nav-item">Username</span>                                            
+                         <img src="<?php echo $fileSRC;?>" class="img-fluid">
+                         <span class="nav-item"><?php echo $Nombre." ".$Apellido;?></span>                                            
                     </a>
                 </li>
                 <li class="nav-2"><a href="main.html" class="icon-sidebar">
