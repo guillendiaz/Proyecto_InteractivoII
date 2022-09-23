@@ -1,189 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" type="text/css" href="css/styles_main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
 
 
-    <title>AnimationStudents</title>
+    <title>Seguidores</title>
 </head>
 <body>
-    <div id="contenedor">
+	<!--------------------------------------------Sidebar----------------------------------------->
+        <nav id="navbar-side">
+            <ul>
+                <li>
+                    <a href="main.html" class="logo-sidebar">
+                        <img src="images/unitec_mini.png" class="img-fluid logo-unitec" alt="unitec_mini">
+                    </a>
+                </li>
+                <li class="nav-1">
+                    <a href="perfil.html" class="logo">
+                         <img src="images/baba.jpg" class="img-fluid">
+                         <span class="nav-item">Username</span>                                            
+                    </a>
+                </li>
+                <li class="nav-2"><a href="main.html" class="icon-sidebar">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-item">Home</span>
+                </a></li>
+                <li class="nav-3"><a href="#" class="icon-sidebar">
+                    <i class="fas fa-calendar "></i>
+                    <span class="nav-item">Calendario</span>
+                </a></li>
+                <li class="nav-4"><a href="#" id="publicacionBTN" class="icon-sidebar">
+                    <i class="fas fa-plus"></i>
+                    <span class="nav-item">Agregar publicacion</span>
+                </a></li>
+                <li class="nav-5"><a href="#" class="icon-sidebar log-out" onclick="botonSalir()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-item">Cerrar Sesion</span>
+                </a></li>
+            </ul>
+        </nav>
 
-        <div id="columnaizquierda">
+        <!---------------------------------------Menu derecha--------------------------------------------->
 
-            <!--Boton Salir-->
-            <a href="#" onclick="botonSalir()"><i class="fas fa-sign-out-alt"></i></a>
-            <!--Boton Salir-->
-        </div>
-
-        <!--Pop up de botonSalir -->
-        <div id="ventanaSalir" class="modal" style="display: none;">
-            <div class="contenidoSalir">
-                <h4>¿Estás seguro que quieres cerrar sesión?</h4>
-                <div class="opcionesSalir">
-                    <a href="index.php" class="botonSi">SI</a>
-                    <a onclick="botonSalir()" href="#" class="botonNo">NO</a>
-            </div>
-            </div>
-        </div>
-
-
-        <!--Pop UP Publicacion-->
-        <div id="myModal" class="modal">
-            <div id="ventanaPublicar">
-                <div class="content">
-                    <div class="container">
-
-                         <!--Titulo de Nueva Publicación-->
-                        <div id="tituloNuevaPub" class="borde">
-                            <h1>Nueva Publicación</h1>
-
-                            <!--X de cierre-->
-                            <span class="xCerrar"><i class="fas fa-times"></i></span>
-                        </div>
-
-                        <div class="agregarArchivo borde">
-
-                            <!--Seleccion de Archivos a Publicar-->
-                             <div>
-                                <p>Seleccione un archivo de foto, video o pdf para publicar.</p>
-                            </div>
-                            <div class="seleccionados">
-                                <img class="imgPublicar" src="images/ejemplo1.png" alt="placeholder">
-                                <img class="imgPublicar" src="images/ejemplo2.png" alt="placeholder">
-
-                                <!--BOTON de SELECCIONAR Archivos-->
-                                <button class="seleccionarArchivo"> 
-                                        <i class="fas fa-plus-circle"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="borde descripcionInput">
-
-                            <!--Input de DESCRIPCION del Post-->
-                            <input type="text" name="Descripción" placeholder="Descripción...">
-
-                            <!--EMOTES-->
-                            <div class="emotes">
-                                <span class="smile">&#128512;</span>
-                                <span class="emotesrow"><i class="fas fa-heart"></i> <i class="fas fa-thumbs-up"></i>&#128562;&#128518;</span>
-                            </div>
-                        </div>
-
-                        <div class="publicarCancelar">
-
-                            <!--Botones para PUBLICAR o CANCELAR el post-->
-                            <input href="#" type="submit" value="Cancelar" class="btn-red cerrar">
-                            <input href="#" type="submit" value="Publicar" class="btn-blue">
-                        </div>
-                    </div>
-                </div>
-             </div>
-        </div>
-
-        <!--Pop UP Publicacion-->
-
-
-
-        <div id="columnacentral" style="background-color: white">
-            <div id="menuderbusqueda">
-                    <i class="fas fa-search"></i><input id="taskInput" type="text" placeholder="Buscar...">
-                </div>
-
-            <div>
-				<div class="seguidores-contenedor">
-				<div style="text-align: center; background-color:#707070; font-size: 20px; color: white;">Personas</div>
-				<a href="#" class="tab" onclick="showStuff(this);changeColor(this.id);" id="seguidos1">Seguidos</a><a href="#" class="tab" onclick="showStuff(this);changeColor(this.id)" id="seguidos2">Seguidores</a>
-				
-				<div class="perfiles-contenedor, tabContent" id="seguidos-1">
-					<div class="perfiles"><img src="images/baba.jpg" width="400" height="400" alt=""/><p>Sebastian Avila</p><button class="seguir"><span class="remover">Remover</span><span class="seguir-t">Seguido</span></button></div>
-					<div class="perfiles"><img src="images/baba.jpg" width="400" height="400" alt=""/><p>Sebastian Avila</p><button class="seguir"><span class="remover">Remover</span><span class="seguir-t">Seguido</span></button>
-				    </div>
-				</div>
-				<div class="perfiles-contenedor, tabContent" id="seguidos-2">
-					<div class="perfiles"><img src="images/baba.jpg" width="400" height="400" alt=""/><p>Sebastian Avila</p><button class="seguir"><span class="remover">Remover</span><span class="seguir-t">Seguir</span></button></div>
-				</div>
-			</div>
-			</div>
-			</div>
+       
 	
+
+				
+        <div id="columnacentralseguidores" >
+			<!----Barra de Busqueda---->
+                <div class="container-fluid">
+                <div class="busqueda">
+                    <input id="taskInput" type="text" placeholder="Buscar...">
+                </div>
+            </div>
+                <!----Barra de Busqueda---->
+            <div>
+				<div class="seguidores-contenedor container-fluid">
+					<span class="nada">]</span>
+					<div class="Seguidores-2 container-fluid">
+						
+				
+				<a href="#" class="tab container-fluid" onclick="showStuff(this);changeColor(this.id);" id="seguidos1">Seguidos</a>
+						
+				<a href="#" class="tab container-fluid" onclick="showStuff(this);changeColor(this.id)" id="seguidos2">Seguidores</a>
+				
+				<div id="Seguidorescolumna">
+				<div class="col-lg-12, perfiles-contenedor, tabContent" id="seguidos-1">
+					<div class= "row">
+						<article class="col-md-3 col-sm-12" id="imagenesperfiles">
+						
+						<img class="imgseguidores" src="images/baba.jpg" width="400" height="400" alt=""/>
+						
+						</article>
+							
+						<article class="col-md-3 col-sm-12">
+						<p>Sebastian Avila</p>
+						</article>
+						
+						<article class="col-md-3 col-sm-12">
+						<button class="btn-red"><span class="remover">Remover</span></button>
+						<button class="btn-red"><span class="seguir-t">Seguido</span></button>
+						</article>
+				</div>
+				</div>
+				</div>
+			</div>
+			</div>
 
 
         <div id="columnaderecha">
             <div id="menuderecha">
-                <!----Barra de Busqueda---->
-                <div id="menuderbusqueda">
-                    <i class="fas fa-search"></i><input id="taskInput" type="text" placeholder="Buscar...">
-                </div>
-                <!----Barra de Busqueda---->
-
-
-                <div id="menudersugerencias">
-                    <!----Sugerencias de Personas---->
-                    <div id="mdspersonas">
-                        <h6>SUGERENCIAS PARA TI</h6>
-                        <div class="mdspersonas row">
-                            <article class="col-md-2">
-                                <img src="images/baba.jpg" class="imgSugerencia" alt="sugerencia"> 
-                            </article>
-                            <article class="col-md-5 personas">
-                                Naima Roig
-                            </article>
-                            <article class="col-md-5">
-                               <a class="botonder">SEGUIR</a>
-                            </article>
-                        </div>
-                    </div>
-                    <!----Sugerencias de Personas---->
-
-
-
-                    <!----Sugerencias de Tags---->
-                    <div id="mdstags">
-                        <h6>EXPLORAR TAGS</h6>
-                        <div class="mdstags row">
-                            <article class="col-md-7">
-                                #Modelado3D
-                            </article>
-                            <article class="col-md-5">
-                                <a class="botonder">SEGUIR</a>
-                            </article>
-                                
-                            <article class="col-md-7">
-                                #Dibujo
-                            </article>
-                            <article class="col-md-5">
-                                <a class="botonder">SEGUIR</a>
-                            </article>
-
-                            <article class="col-md-7">
-                                #Animacion2D
-                            </article>
-                            <article class="col-md-5">
-                                <a class="botonder">SEGUIR</a>
-                            </article>
-
-                            <article class="col-md-7">
-                                #Ilustracion
-                            </article>
-                            <article class="col-md-5">
-                                <a class="botonder">SEGUIR</a>
-                            </article>
-                        </div>
-                    </div>
-                    <!----Sugerencias de Tags---->
-                    
+                
+   
                 </div>
             </div>
         </div>
-		</div>
+		
 
 
 

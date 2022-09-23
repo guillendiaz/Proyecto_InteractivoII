@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/php" href="">
     
+    <?php include('php/main.php'); ?>
 
 
     <title>AnimationStudents</title>
@@ -21,153 +24,61 @@
                         <img src="images/unitec_mini.png" class="img-fluid logo-unitec" alt="unitec_mini">
                     </a>
                 </li>
-                <li>
+                <li class="nav-1">
                     <a href="perfil.html" class="logo">
-                         <img src="images/baba.jpg" class="img-fluid">
-                         <span class="nav-item">Username</span>                                            
+                         <img src="<?php echo $fileSRC;?>" class="img-fluid">
+                         <span class="nav-item"><?php echo $Nombre." ".$Apellido;?></span>                                            
                     </a>
                 </li>
-                <li><a href="#" class="icon-sidebar">
+                <li class="nav-2"><a href="main.html" class="icon-sidebar">
                     <i class="fas fa-home"></i>
                     <span class="nav-item">Home</span>
                 </a></li>
-                <li><a href="#" class="icon-sidebar">
+                <li class="nav-3"><a href="#" class="icon-sidebar">
                     <i class="fas fa-calendar "></i>
                     <span class="nav-item">Calendario</span>
                 </a></li>
-                <li><a href="#" id="publicacionBTN" class="icon-sidebar">
+                <li class="nav-4"><a href="#" id="publicacionBTN" class="icon-sidebar">
                     <i class="fas fa-plus"></i>
                     <span class="nav-item">Agregar publicacion</span>
                 </a></li>
-                <li><a href="#" class="icon-sidebar log-out" onclick="botonSalir()">
+                <li class="nav-5"><a href="#" class="icon-sidebar log-out" onclick="botonSalir()">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Cerrar Sesion</span>
                 </a></li>
             </ul>
         </nav>
 
-        <!---------------------------------------Menuderecha--------------------------------------------->
 
-        <section id="menu-derecha">
-                <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light">
-
-                
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                          <div class="collapse navbar-collapse" id="navbar">
-                               
-                                    
-                <div class="container-fluid sugerencias">
-                    <div class="container-fluid sugerencias-user">
-                    <h1 class="subtitulo">Sugerencias para ti</h1>
-                    <div class="row">
-                        <article class="col-md-6 col-sm-12">
-                            <h2 class="subtitulo-2">Nombre Generico</h2>
-                        </article>
-                        <article class="col-md-6 col-sm-12">
-                            <button class="btn btn-azul">Seguir</button>
-                        </article>
-                    </div>
-                    <div class="row">
-                        <article class="col-md-6 col-sm-12">
-                            <h2 class="subtitulo-2">Nombre Generico</h2>
-                        </article>
-                        <article class="col-md-6 col-sm-12">
-                            <button class="btn btn-azul">Seguir</button>
-                        </article>
-                    </div>
-                    <div class="row">
-                        <article class="col-md-6 col-sm-12">
-                            <h2 class="subtitulo-2">Nombre Generico</h2>
-                        </article>
-                        <article class="col-md-6 col-sm-12">
-                            <button class="btn btn-azul">Seguir</button>
-                        </article>
-                    </div>
-                    <div class="row">
-                        <article class="col-md-6 col-sm-12">
-                            <h2 class="subtitulo-2">Nombre Generico</h2>
-                        </article>
-                        <article class="col-md-6 col-sm-12">
-                            <button class="btn btn-azul">Seguir</button>
-                        </article>
-                    </div>
-                </div>
-                <div class="container-fluid explora-tags">
-                    <h1 class="subtitulo">Explora tags</h1>
-                    <div class="row">
-                        <article class="col-md-6 col-sm-12">
-                            <h2 class="subtitulo-2">#Modelado3d</h2>
-                        </article>
-                        <article class="col-md-6 col-sm-12">
-                            <button class="btn btn-azul">Seguir</button>
-                        </article>
-                    </div>
-                    <div class="row">
-                        <article class="col-md-6 col-sm-12">
-                            <h2 class="subtitulo-2">#Dibujo</h2>
-                        </article>
-                        <article class="col-md-6 col-sm-12">
-                            <button class="btn btn-azul">Seguir</button>
-                        </article>
-                    </div>
-                    <div class="row">
-                        <article class="col-md-6 col-sm-12">
-                            <h2 class="subtitulo-2">#Animacion</h2>
-                        </article>
-                        <article class="col-md-6 col-sm-12">
-                            <button class="btn btn-azul">Seguir</button>
-                        </article>
-                    </div>
-                    <div class="row">
-                        <article class="col-md-6 col-sm-12">
-                            <h2 class="subtitulo-2">#Ilustracion</h2>
-                        </article>
-                        <article class="col-md-6 col-sm-12">
-                            <button class="btn btn-azul">Seguir</button>
-                        </article>
-                    </div>
-                </div>   
-            </div>
-
-              </div>
-            </nav>
-        </div>
-
-          
-            
-        </section>
+        
 
 
 
 
 
         <!--Pop up de botonSalir -->
-        <div id="ventanaSalir" class="modal" style="display: none;">
+        <div id="ventanaSalir" class="modal container-fluid" style="display: none;">
             <div class="contenidoSalir">
                 <h4>¿Estás seguro que quieres cerrar sesión?</h4>
                 <div class="opcionesSalir">
-                    <a href="index.php" class="botonSi">SI</a>
+                    <a href="Registro.html" class="botonSi">SI</a>
                     <a onclick="botonSalir()" href="#" class="botonNo">NO</a>
             </div>
             </div>
         </div>
 
         <!--Pop UP Publicacion-->
-        <div id="myModal" class="modal">
-            <div id="ventanaPublicar">
-                <div class="content">
-                    <div class="container">
+        <div id="myModal" class="modal"> 
+
+						<div class="fondo-container">
 
                          <!--Titulo de Nueva Publicación-->
                         <div id="tituloNuevaPub" class="borde">
+							<!--X de cierre-->
+                           
                             <h1>Nueva Publicación</h1>
-
-                            <!--X de cierre-->
-                            <span class="xCerrar"><i class="fas fa-times"></i></span>
+							<i class="fas fa-times xCerrar"></i>
+                            
                         </div>
 
                         <div class="agregarArchivo borde">
@@ -177,37 +88,26 @@
                                 <p>Seleccione un archivo de foto, video o pdf para publicar.</p>
                             </div>
                             <div class="seleccionados">
-                                <img class="imgPublicar" src="images/ejemplo1.png" alt="placeholder">
-                                <img class="imgPublicar" src="images/ejemplo2.png" alt="placeholder">
-
+                              
                                 <!--BOTON de SELECCIONAR Archivos-->
-                                <button class="seleccionarArchivo"> 
+                                <button class="seleccionarArchivo container-fluid"> 
                                         <i class="fas fa-plus-circle"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <div class="borde descripcionInput">
-
-                            <!--Input de DESCRIPCION del Post-->
-                            <input type="text" name="Descripción" placeholder="Descripción...">
-
-                            <!--EMOTES-->
-                            <div class="emotes">
-                                <span class="smile">&#128512;</span>
-                                <span class="emotesrow"><i class="fas fa-heart"></i> <i class="fas fa-thumbs-up"></i>&#128562;&#128518;</span>
-                            </div>
-                        </div>
+                        
 
                         <div class="publicarCancelar">
 
                             <!--Botones para PUBLICAR o CANCELAR el post-->
+							<input href="#" type="submit" value="Publicar" class="btn-blue">
                             <input href="#" type="submit" value="Cancelar" class="btn-red cerrar">
-                            <input href="#" type="submit" value="Publicar" class="btn-blue">
+                            
+							</div>
                         </div>
-                    </div>
-                </div>
-             </div>
+                  
+
         </div>
 
   
@@ -230,92 +130,60 @@
 
              <section id="historias">
 
-                    <div class="container-fluid">
-                        <div class="container text-center my-3">
-                            <div class="row mx-auto my-auto justify-content-center">
-                                <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner" role="listbox">
-                                        <div class="carousel-item active">
-                                            <div class="col-md-3">
-                                                <div class="card">
-                                                    <div class="card-img">
-                                                        <img src="images/schmebulok.jpg" class="img-fluid">
-                                                    </div>
-                                                    <div class="card-img-overlay">Slide 1</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="col-md-3">
-                                                <div class="card">
-                                                    <div class="card-img">
-                                                        <img src="images/schmebulok.jpg" class="img-fluid">
-                                                    </div>
-                                                    <div class="card-img-overlay">Slide 2</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="col-md-3">
-                                                <div class="card">
-                                                    <div class="card-img">
-                                                        <img src="images/schmebulok.jpg" class="img-fluid">
-                                                    </div>
-                                                    <div class="card-img-overlay">Slide 3</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="col-md-3">
-                                                <div class="card">
-                                                    <div class="card-img">
-                                                        <img src="images/schmebulok.jpg" class="img-fluid">
-                                                    </div>
-                                                    <div class="card-img-overlay">Slide 4</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="col-md-3">
-                                                <div class="card">
-                                                    <div class="card-img">
-                                                        <img src="images/schmebulok.jpg" class="img-fluid">
-                                                    </div>
-                                                    <div class="card-img-overlay">Slide 5</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="col-md-3">
-                                                <div class="card">
-                                                    <div class="card-img">
-                                                        <img src="images/schmebulok.jpg" class="img-fluid">
-                                                    </div>
-                                                    <div class="card-img-overlay">Slide 6</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="col-md-3">
-                                                <div class="card">
-                                                    <div class="card-img">
-                                                        <img src="images/schmebulok.jpg" class="img-fluid">
-                                                    </div>
-                                                    <div class="card-img-overlay">Slide 7</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    </a>
-                                    <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    </a>
-                                </div>
-                            </div>      
-                        </div>
-                    </div>
+              <div class="story-container">
+		<ul>
+			<li>
+				<div class="story">
+					<img src="images/historia1.jpg">
+				</div>
+			</li>
+			<li>
+				<div class="story">
+					<img src="images/historia2.jpg">
+				</div>
+			</li>
+			<li>
+				<div class="story">
+					<img src="images/historia3.jpeg">
+				</div>
+			</li>
+			<li>
+				<div class="story">
+					<img src="images/historia4.jpeg">
+				</div>
+			</li>
+			<li>
+				<div class="story">
+					<img src="images/historia5.jpeg" alt="">
+				</div>
+			</li>
+		</ul>
+	</div>
+		
+				 
+ <!----------------------------------------reaciones------------------------------------------>				 
+	 <!-----<div class="container  post-comments">
+		 <i class="fas fa-thumbs-up like"></i> <p>reacciones</p> 
+		<div class="content">
+			<div class="emoji">
+				
+				<div class="hello">
+					<a href="#" class="btn"><img src="images/emoji_risa.png"></a>
+				</div>
+				<div class="hello">
+					<a href="#" class="btn"><img src="images/emoji_alegria.png"></a>
+				</div>
+				<div class="hello">
+					<a href="#" class="btn"><img src="images/emoji_sorpresa.png"></a>
+				</div>
+				<div class="hello">
+					<a href="#" class="btn"><img src="images/emoji_encanto.png"></a>
+				</div>
+				
+			</div>
+		</div>
+		
+	</div>-->	
 
                </section>
 
@@ -323,10 +191,6 @@
 
         <!---------------------------------------------------Feed-------------------------------------------------->
                <section id="feed">
-                   
-                    <!--Botones TODOS y SEGUIDOS-->
-                            <button class="btn btn-dark"><a data-toggle="pill" href="#todosTab">Todos</a></button>
-                            <button class="btn btn-light"><a data-toggle="pill" href="#siguiendoTab">Siguiendo</a></button>
 
                         <!-------------------------------Publicacion----------------------------------->
 
@@ -335,7 +199,54 @@
                                 <article class="col-2">
                                     <img src="images/baba.jpg" class="img-fluid post-profile" alt="Profile-user">
                                 </article>
-                                <article class="col-10">
+                                <article class="col-10 container-fluid">
+                                        <h1 class="titulo"><?php echo $Nombre2.' '.$Apellido2; ?></h1>
+                                        <p><?php echo $descripcion; ?></p>
+                                </article>
+                            </div>
+                            <div class="post-img">
+                                <img src="<?php echo $imgUser;?>" class="img-fluid">
+                            </div>
+
+                            <div class="container post-comments">
+							
+                                <i class="fas fa-thumbs-up like content"> Reacciones</i> 
+								
+								<div class="emoji">
+
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_risa.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_alegria.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_sorpresa.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_encanto.png"></a>
+									</div>
+
+								</div>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								<i class="fas fa-comment-dots like"></i> <p>comments</p>
+                            </div>
+                        </div>
+
+                        <div class="container publicacion">
+                            <div class="row post-header">
+                                <article class="col-2">
+                                    <img src="images/baba.jpg" class="img-fluid post-profile" alt="Profile-user">
+                                </article>
+                                <article class="col-10 container-fluid">
                                         <h1 class="titulo">Nombre Generico</h1>
                                         <p>Aqui va el texto para el post #blessed #GOAT</p>
                                 </article>
@@ -344,8 +255,35 @@
                                 <img src="">
                             </div>
 
-                            <div class="container post-comments">
-                                <i class="fas fa-heart"></i> <p>reacciones</p> <i class="fas fa-thumbs-up"></i> <p>comments</p>
+                              <div class="container post-comments">
+							
+                                <i class="fas fa-thumbs-up like content"> Reacciones
+								
+								<div class="emoji">
+
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_risa.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_alegria.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_sorpresa.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_encanto.png"></a>
+									</div>
+
+								</div>
+								
+								
+								</i> 
+								
+								
+								
+								
+								
+								<i class="fas fa-comment-dots like"></i> <p>comments</p>
                             </div>
                         </div>
 
@@ -363,27 +301,35 @@
                                 <img src="">
                             </div>
 
-                            <div class="container post-comments">
-                                <i class="fas fa-heart"></i> <p>reacciones</p> <i class="fas fa-thumbs-up"></i> <p>comments</p>
-                            </div>
-                        </div>
+                              <div class="container post-comments">
+							
+                                <i class="fas fa-thumbs-up like content"> Reacciones
+								
+								<div class="emoji">
 
-                        <div class="container publicacion">
-                            <div class="row post-header">
-                                <article class="col-2">
-                                    <img src="images/baba.jpg" class="img-fluid post-profile" alt="Profile-user">
-                                </article>
-                                <article class="col-10">
-                                        <h1 class="titulo">Nombre Generico</h1>
-                                        <p>Aqui va el texto para el post #blessed #GOAT</p>
-                                </article>
-                            </div>
-                            <div class="post-img">
-                                <img src="">
-                            </div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_risa.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_alegria.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_sorpresa.png"></a>
+									</div>
+									<div class="hello">
+										<a href="#" class="btn"><img src="images/emoji_encanto.png"></a>
+									</div>
 
-                            <div class="container post-comments">
-                                <i class="fas fa-heart"></i> <p>reacciones</p> <i class="fas fa-thumbs-up"></i> <p>comments</p>
+								</div>
+								
+								
+								</i> 
+								
+								
+								
+								
+								
+								<i class="fas fa-comment-dots like"></i> <p>comments</p>
                             </div>
                         </div>
 
