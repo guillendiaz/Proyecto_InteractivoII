@@ -1,7 +1,7 @@
 
 
 *{
- 
+
     text-decoration: none;
     box-sizing: border-box;
 }
@@ -110,7 +110,7 @@ p {
 }
 
 /*--------------------------------SIDEBAR IZQUIERDA---------------------------------*/
- 
+
  #navbar-side:hover{
     width: 280px;
     transition: all 0.5s ease;
@@ -142,7 +142,7 @@ p {
     font-size: 14px;
     display: table;
     width: 300px;
-    padding: 10px; 
+    padding: 10px;
  }
  .icon-sidebar:hover{
     background: #eee;
@@ -167,14 +167,14 @@ p {
     text-align: center;
     color: #BCBCBC;
  }
- 
+
  .nav-item{
     position: relative;
     color: #3B5F94;
     top: 12px;
-    margin-left: 10px;  
+    margin-left: 10px;
  }
- 
+
  .logo-text{
     width: 65%;
  }
@@ -270,14 +270,14 @@ p {
             transform: translateX(25%);
         }
 
-        .carousel-inner .carousel-item-start.active, 
+        .carousel-inner .carousel-item-start.active,
         .carousel-inner .carousel-item-prev {
             transform: translateX(-25%);
         }
     }
 
     .carousel-inner .carousel-item-end,
-    .carousel-inner .carousel-item-start { 
+    .carousel-inner .carousel-item-start {
         transform: translateX(0);
     }
 
@@ -308,7 +308,7 @@ p {
 	position: absolute;
 	background-color: rgba(176,176,176,1.00);
 	opacity: .95;
-	
+
 }
 
 
@@ -331,12 +331,12 @@ p {
     height: 15vh;
     border-radius: 15px;
     border-style: none;
-    
+
 }
 .botonSi{
     color: black;
     margin: 20px;
-   
+
 }
 .botonSi:hover{
     color: #3B5F94;
@@ -357,12 +357,12 @@ p {
  ::-webkit-scrollbar {
     width: 10px;
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
     width: 34px;
 }
-  
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: white;
@@ -371,7 +371,7 @@ p {
     border-width: thin;
     border-color: #707070;
 }
-  
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 }
@@ -442,16 +442,16 @@ p {
 
 	#hero{
 	font-size: 15px;
-		
+
 
 }
 	#columnacentralseguidores .tab{
 	margin-top: 40px;
 		display: flex;
 	padding: 1% 21%;
-	
+
 }
-	
+
 }
 
 
@@ -498,7 +498,7 @@ p {
  --f7-navbar-text-color:#fff;
  --f7-bars-bg-color:#3B5F94;/*toolbar*/
  --f7-block-margin-vertical:20px;
- --f7-card-footer-border-color:transparent; 
+ --f7-card-footer-border-color:transparent;
 }
 
 
@@ -508,12 +508,12 @@ p {
 #form-login{
 	color: #C2C7C6;
 	padding: 0px 30px;
-	
+
 }
 #form-registro{
 	color: #C2C7C6;
 	padding: 0px 30px;
-	
+
 }
 .button{
 	border-radius: 40px;
@@ -524,7 +524,7 @@ p {
 }
 
 .title{
-	
+
  	text-align: var(--f7-login-screen-title-text-align);
 	font-size: var(--f7-login-screen-title-font-size);
     font-weight: var(--f7-login-screen-title-font-weight);
@@ -540,7 +540,7 @@ p {
 }
 #modal-login .page-content{
 	border-radius: 40px;
-	
+
 }
 #modal-registro .page{
 	background-image: url("../images/painting study.png");
@@ -554,10 +554,10 @@ p {
 	height: auto;
 	max-height: 100%;
 	width: 100%;
-	
+
 }
 a:hover {
-	color:#ffc107; 
+	color:#ffc107;
 }
 #btnRegistro{
 	background:#F5F5F5;
@@ -642,9 +642,9 @@ a:hover {
 }
 
 .Personasseguidores{
-	text-align: center; 
-	background-color: white; 
-	font-size: 20px; 
+	text-align: center;
+	background-color: white;
+	font-size: 20px;
 	color: #3b5f94;
 }
 .imgseguidores{
@@ -669,14 +669,14 @@ a:hover {
 
 
 .fondo-container{
-	background-color:#fff; 
+	background-color:#fff;
 	border-radius: 15px;
 	margin: auto;
 	position: absolute;
 	width: 88vw;
 	padding: 35px 0;
 	text-align: center;
-	
+
 }
 .xCerrar{
 	position: absolute;
@@ -684,7 +684,7 @@ a:hover {
 	right: 20px;
 	color: #727272;
 	font-size: 30px;
-	
+
 }
 
 
@@ -710,7 +710,7 @@ a:hover {
 
 
 .seleccionarArchivo {
-	color: #727272; 
+	color: #727272;
 	top:-19px;
 	box-sizing: border-box;
     border: none;
@@ -723,7 +723,7 @@ a:hover {
 
 
 .Des{
-	
+
 	color: #727272;
 	left: 100px;
 	width: 580px;
@@ -737,10 +737,10 @@ a:hover {
 
 
 .emotes{
-	
+
 	left: 100px;
 	padding-top: 10px;
-	
+
 }
 
 
@@ -759,12 +759,12 @@ a:hover {
 	padding: 5px;
 	padding-left: 20px;
 	padding-right: 20px;
-	
-	
+
+
 }
 
 .btn-red{
-	
+
 	padding: 2px 12px;
     border-radius: 6px;
     color: #fff;
@@ -778,7 +778,7 @@ a:hover {
 	padding: 5px;
 	padding-left: 20px;
 	padding-right: 20px;
-	
+
 }
 
 
@@ -890,7 +890,7 @@ display: flex;
 	padding: 10px;
 	border-radius: 25px;
 	border: #000000 medium;
-	
+
 }
 
 #columnacentralseguidores .tab{
@@ -906,8 +906,8 @@ display: flex;
 	border-radius: 0.375rem;
 	border:none;
 	color: white;
-   
-	
+
+
 }
 #Seguidores-2{
 	margin-top: 40px;
@@ -983,7 +983,7 @@ padding-bottom: 3px;
 .img-responsive-post{
     width: 500p;
     border-radius: 3%;
-    
+
 }
 
 #MINPUT{
@@ -1033,7 +1033,7 @@ padding-bottom: 3px;
     margin-top: 6%;
     border-radius: 25px;
     z-index: 11;
-    overflow: auto; 
+    overflow: auto;
 }
 .m-content {
     margin: 28px;
@@ -1082,3 +1082,34 @@ padding-bottom: 3px;
         z-index: 12;
     }
 
+/* Flickity */
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 15%;
+  height: 200px;
+  margin-right: 5px;
+  background: #8C8;
+  border-radius: 5px;
+    overflow: hidden;
+}
+.carousel-cell img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-cell.is-selected {
+  background: #ED2;
+}
+
+/* cell number */
+
+@media only screen and (max-width: 991px){
+    .carousel-cell{
+        width: 50%;
+    }
+}
