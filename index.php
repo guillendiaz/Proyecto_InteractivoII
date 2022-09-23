@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 	<link href="css/framework7.bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
+
 
 
     <title>AnimationStudents</title>
@@ -22,13 +22,13 @@
 	  <div class="view">
 		<div class="page login-screen-page">
 		  <div class="page-content login-screen-content">
-			 
+
 			<div class="login-screen-title"><img src="images/Logo_UNITEC.png" class="img-fluid" alt=""  width = "300" height = "300"></div>
 			  <h1 class="title">Iniciar Sesión</h1>
-			  
+
 			<form action="includes/login.inc.php" method="post" id="form-login">
 			  <div class="list">
-				  
+
 				<ul>
 				  <li class="item-content item-input">
 					<div class="item-inner">
@@ -38,7 +38,7 @@
 					  </div>
 					</div>
 				  </li>
-					
+
 				  <li class="item-content item-input">
 					<div class="item-inner">
 					  <div class="item-input-wrap">
@@ -47,7 +47,7 @@
 					  </div>
 					</div>
 				  </li>
-					
+
 				  <li class="item-content item-input">
 					<div class="item-inner">
 					  <div class="item-input-wrap">
@@ -58,10 +58,10 @@
 				  </li>
 				</ul>
 			  </div>
-				
+
 			  <div class="list block">
 				  <div class="block-footer"><a href="#" class="button" data-login-screen="#modal-registro" id="btnolvidar">¿has olvidado tu contraseña?</a></div>
-				  
+
 				<ul>
 				  <li>
 					<button type="submit" name="submit" class="button button-fill" id="btnLogin">Ingresar</button>
@@ -70,7 +70,7 @@
 					  <div class="block-footer"><a href="#" class="login-screen-open button button-fill" data-login-screen="#modal-registro" id="btnRegistro">Regístrate aquí</a></div>
 				  </li>
 				</ul>
-				  <?php 
+				  <?php
 	  			if (isset($_GET['error'])) {
 	  			if ($_GET['error'] == "CamposVacios") {
 	  		  	echo "<p>Olvidaste llenar un campo</p>";
@@ -88,13 +88,13 @@
 	  		  	echo "<p>datos de login incorrectos</p>";
 	  		  }elseif ($_GET['error'] == "none") {
 	  		  	echo "<p>Te registraste exitosamente</p>";
-	  		  }  
+	  		  }
 	  		}
 	   ?>
-				
-				  
+
+
 			  </div>
-				
+
 			</form>
 		  </div>
 		</div>
@@ -182,10 +182,10 @@
 	</div>
 </div>
 
-<!--
+
 	<script src="js/framework7.bundle.min.js"></script>
 	<script src="js/app.js"></script>
--->
+
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -193,4 +193,3 @@
 
 </body>
 </html>
-

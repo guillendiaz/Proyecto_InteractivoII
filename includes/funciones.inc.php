@@ -1,4 +1,4 @@
-<?php 
+<?php
 //comprobar que los campos esten llenos
 function emptyInputSignup($nombre, $apellido, $email, $nucuenta, $pwd, $confpwd){
 $result;
@@ -85,7 +85,7 @@ function crearUsuario($conn, $nombre, $apellido, $nucuenta, $tel, $email, $pwd){
 	mysqli_stmt_close($stmt);
 	header("Location: ../index.php?error=none");
 	exit();
-} 
+}
 
 function emptyInputLoging($email, $nucuenta, $pwd){
 $result;
@@ -108,8 +108,8 @@ function loginUser($conn, $email, $nucuenta, $pwd){
 		$array = mysqli_fetch_array($consulta);
 
 		if ($array['contar'] > 0) {
-			$_SESSION['id'] = $nucuenta; 
-			header("Location: ../main.php");
+			$_SESSION['id'] = $nucuenta;
+			header("Location: ../main.html");
 		}else{
 			header("Location: ../index.php?error=datosincorrectos");
 		}
