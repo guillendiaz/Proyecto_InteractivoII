@@ -31,8 +31,8 @@ if ($ext)
 {
   $n = "$name.$fecha.$ext";
   move_uploaded_file($_FILES['filename']['tmp_name'], $n);
-  echo "Historia Subida";
-
+  
+  echo "<script>alert('Historia Subida')</script>";
 }else{
   echo "'$name' Debe ser una imagen";
 }
