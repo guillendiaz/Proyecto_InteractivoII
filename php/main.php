@@ -112,7 +112,7 @@
         //Asigna la imagen ingresada por el usuario en base a su numero de cuenta a su carpeta de posts
         if ($ext) {
           $n  = $count.".".$ext;
-          $destdir = '../Users/'.$NumeroCuenta.'/Posts/';
+          $destdir = 'Users/'.$NumeroCuenta.'/Posts/';
           move_uploaded_file($_FILES['perfil']['tmp_name'], $destdir.$n);
 
         }
