@@ -1,4 +1,4 @@
-<?php
+<?php 
 //comprobar que los campos esten llenos
 function emptyInputSignup($nombre, $apellido, $email, $nucuenta, $pwd, $confpwd){
 $result;
@@ -78,14 +78,12 @@ function crearUsuario($conn, $nombre, $apellido, $nucuenta, $tel, $email, $pwd){
 		exit();
 	}
 
-	$hashesPwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-	mysqli_stmt_bind_param($stmt, "ssssss", $nombre, $apellido, $nucuenta, $tel, $email, $hashesPwd);
+	mysqli_stmt_bind_param($stmt, "ssssss", $nombre, $apellido, $nucuenta, $tel, $email, $pwd);
 	mysqli_stmt_execute($stmt);
 	mysqli_stmt_close($stmt);
 	header("Location: ../index.php?error=none");
 	exit();
-}
+} 
 
 function emptyInputLoging($email, $nucuenta, $pwd){
 $result;
@@ -101,6 +99,13 @@ return $result;
 function loginUser($conn, $email, $nucuenta, $pwd){
 
 		session_start();
+		$_SESSION['id'] = $row['ID'];
+        $_SESSION['Nom'] = $row['nombre'];
+        $_SESSION['Apel'] = $row['apellido'];
+        $_SESSION['N_Cuenta'] = $row['num_cuenta'];
+        $_SESSION['N_Tel'] = $row['num_telefono'];
+        $_SESSION['Correo'] = $row['correo'];
+        $_SESSION['Contra'] = $row['contrasenia'];
 
 		$sql = "SELECT count(*) as 'contar' FROM usuarios WHERE correo = '$email' and num_cuenta = '$nucuenta' and contrasenia = '$pwd'";
 		$consulta = mysqli_query($conn, $sql);
@@ -108,8 +113,8 @@ function loginUser($conn, $email, $nucuenta, $pwd){
 		$array = mysqli_fetch_array($consulta);
 
 		if ($array['contar'] > 0) {
-			$_SESSION['id'] = $nucuenta;
-			header("Location: ../main.html");
+			$_SESSION['id'] = $nucuenta; 
+			header("Location: ../main.php");
 		}else{
 			header("Location: ../index.php?error=datosincorrectos");
 		}
