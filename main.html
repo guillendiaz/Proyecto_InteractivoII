@@ -36,14 +36,19 @@
                     <i class="fas fa-calendar "></i>
                     <span class="nav-item">Calendario</span>
                 </a></li>
-                <li class="nav-4"><a href="#" id="publicacionBTN" class="icon-sidebar">
+                <li class="nav-4">
+                	<!--BOTON PARA MODAL SUBIR PUBLICACION -->
+                	<a href="#" type="button" data-toggle="modal" data-target="#subir-publicacion" class="icon-sidebar">
                     <i class="fas fa-plus"></i>
                     <span class="nav-item">Agregar publicacion</span>
-                </a></li>
-                <li class="nav-4"><a href="#" id="publicacionBTN" class="icon-sidebar">
+                	</a>
+            	</li>
+                <li class="nav-4">
+                	<a href="#" type="button" data-toggle="modal" data-target="#subir-historia" class="icon-sidebar">
                     <i class="fas fa-plus"></i>
                     <span class="nav-item">Subir Historia</span>
-                </a></li>
+                	</a>
+                </li>
                 <li class="nav-5"><a href="#" class="icon-sidebar log-out" onclick="botonSalir()">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Cerrar Sesion</span>
@@ -69,48 +74,108 @@
             </div>
         </div>
 
-        <!--Pop UP Publicacion-->
-        <div id="myModal" class="modal">
 
-						<div class="fondo-container">
+        <!-- POP UP PUBLICACION NUEVO-->
 
-                         <!--Titulo de Nueva Publicación-->
-                        <div id="tituloNuevaPub" class="borde">
-							<!--X de cierre-->
+        <div class="modal fade" id="subir-publicacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
-                            <h1>Nueva Publicación</h1>
-							<i class="fas fa-times xCerrar"></i>
+			<div class="modal-dialog m-container" role="document">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true" class="ion-ios-close"><i class="fas fa-times"></i></span>
+				  </button>
 
+					<div class="modal-content m-content">
+					    <div class="modal-body p-4 p-md-5">
+
+
+
+                        <div class="container">
+                            <h1 class="titulo">Nueva Publicación</h1>                         
                         </div>
 
-                        <div class="agregarArchivo borde">
+                        <div class="container">
 
-                            <!--Seleccion de Archivos a Publicar-->
-                             <div>
+                             <div class="container">
                                 <p>Seleccione un archivo de foto, video o pdf para publicar.</p>
                             </div>
                             <div class="seleccionados">
-
+                              
                                 <!--BOTON de SELECCIONAR Archivos-->
-                                <button class="seleccionarArchivo container-fluid">
-                                        <i class="fas fa-plus-circle"></i>
+                                <button class="container-fluid"> 
+                                        <a href=""><i class="fas fa-plus-circle"></i></a>
                                 </button>
                             </div>
                         </div>
 
-
+                        
 
                         <div class="publicarCancelar">
 
                             <!--Botones para PUBLICAR o CANCELAR el post-->
 							<input href="#" type="submit" value="Publicar" class="btn-blue">
                             <input href="#" type="submit" value="Cancelar" class="btn-red cerrar">
-
+                            
 							</div>
+
+
+
+			            </div>	
+				    </div>
+			</div>
+		</div>
+
+
+		 <!-- POP UP HISTORIA NUEVO-->
+
+        <div class="modal fade" id="subir-historia" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+			<div class="modal-dialog m-container" role="document">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true" class="ion-ios-close"><i class="fas fa-times"></i></span>
+				  </button>
+
+					<div class="modal-content m-content">
+					    <div class="modal-body p-4 p-md-5">
+
+
+
+                        <div class="container">
+                            <h1 class="titulo">Nueva Historia</h1>                         
                         </div>
 
+                        <div class="container">
 
-        </div>
+                             <div class="container">
+                                <p>Seleccione un archivo de foto, video o pdf para publicar.</p>
+                            </div>
+                            <div class="seleccionados">
+                              
+                                <!--BOTON de SELECCIONAR Archivos-->
+                                <button class="container-fluid"> 
+                                        <a href=""><i class="fas fa-plus-circle"></i></a>
+                                </button>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="publicarCancelar">
+
+                            <!--Botones para PUBLICAR o CANCELAR el post-->
+							<input href="#" type="submit" value="Publicar" class="btn-blue">
+                            <input href="#" type="submit" value="Cancelar" class="btn-red cerrar">
+                            
+							</div>
+
+
+
+			            </div>	
+				    </div>
+			</div>
+		</div>
+
+
+
 
 
 
@@ -340,6 +405,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script>
 
         $(".carousel").flickity({
