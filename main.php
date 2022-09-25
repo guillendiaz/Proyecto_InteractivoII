@@ -54,7 +54,7 @@
                         <div class="usn"><a href="index.php" class="logo">
                         <h4><?php echo $Nombre." ".$Apellido;?></h4>
                         </a></div>
-                        
+
                 </li>
                 <li><a href="#" class="icon-sidebar">
                     <i class="fas fa-home"></i>
@@ -67,6 +67,10 @@
                 <li><a href="#" id="publicacionBTN" class="icon-sidebar">
                     <i class="fas fa-plus"></i>
                     <span class="nav-item">Agregar publicacion</span>
+                </a></li>
+                <li><a href="#" id="publicacionBTN" class="icon-sidebar">
+                    <i class="fas fa-plus"></i>
+                    <span class="nav-item">Subir historia</span>
                 </a></li>
                 <li><a href="#" class="icon-sidebar log-out" onclick="botonSalir()">
                     <i class="fas fa-sign-out-alt"></i>
@@ -337,7 +341,7 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     <script>
-        
+
         $(".carousel").flickity({
             cellAlign: 'left', //cuandp empieza, empieza a la derecha
             wrapAround: true, //significa que es un loop
