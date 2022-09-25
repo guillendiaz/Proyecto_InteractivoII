@@ -62,7 +62,96 @@
                               $imgPost = "Users/".$numC."/Posts/".$imagen;
 
                                }
-                              $conn->close();
+                              //$conn->close();
+
+  //Subir Post
+
+//Si se presiona el boton de Listo
+  if (isset($_POST['enviar'])){
+    //Variable obtenidas de los campos ingresados
+    $perfil = $_FILES['perfil']['name'];
+    $descripcion = $_POST['descripcion'];
+    //$tag = $_POST['tag'];
+
+    //Validacion si el campo perfil o descripcion no estan vacios
+    if ($perfil != "" || $descripcion != "") {
+        //Obtiene las variables de sesion
+        session_start();
+        $NombreUsuario = $_SESSION['Nom'];
+        $NumeroCuenta = $_SESSION['N_Cuenta'];
+        $id = $_SESSION['id'];
+        $date = Date('Y-m-d H:i:s.n');
+
+        //Obtiene cuantas posts existen en la tabla de posts en base al ID del usuario
+        $query3 = "SELECT count(user_ID) AS count FROM post WHERE user_ID = '$id'";
+        $result3 = $conn->query($query3);
+
+        if (!$result3) die("Fatal Error");
+
+        $row2 = $result3->fetch_array(MYSQLI_ASSOC);
+
+        //Contador que se suma uno a la cantidad de posts del usuario
+        $count = $row2['count'] + 1;
+
+        //Validacion si la imagen es un jpg o png
+        switch ($_FILES['perfil']['type']) {
+
+          case 'image/jpeg':
+            $ext = 'jpg';
+            break;
+
+          case 'image/png':
+            $ext = 'png';
+            break;
+
+          default:
+            $ext = '';
+            break;
+        }
+
+        //Asigna la imagen ingresada por el usuario en base a su numero de cuenta a su carpeta de posts
+        if ($ext) {
+          $n  = $count.".".$ext;
+          $destdir = '../Users/'.$NumeroCuenta.'/Posts/';
+          move_uploaded_file($_FILES['perfil']['tmp_name'], $destdir.$n);
+
+        }
+
+        //Obtiene el ID en base al numero de cuenta de la tabla de usuarios
+        $query2 = "SELECT ID FROM usuarios WHERE num_cuenta = '$NumeroCuenta' ";
+        $result2 = $conn->query($query2);
+
+        if (!$result2) die("Fatal Error");
+
+        $row = $result2->fetch_array(MYSQLI_ASSOC);
+        $u = $row['ID'];
+
+        //Insercion a la tabla de posts del usuario
+        $query = "INSERT INTO post (imagen, descripcion, tag, fecha, user_ID)
+                  VALUES" . "('$n','$descripcion','$tag','$date', $u)";
+
+        $result = $conn->query($query);
+        if (!$result) die("Fatal Error");
+
+        //Al darle click al boton de listo se redirige a la pantalla principal
+        if (isset($_POST['enviar'])){
+            ?>
+                <script type="text/javascript">
+                window.location = "main.html";
+                </script>
+            <?php
+        }
+
+        $result->close();
+        $result2->close();
+        $conn->close();
+
+    //Validacion de que no se ha podido agregar post a la tabla
+    } else {
+        echo "Se ha encontrado una falla";
+    }
+  }
+
 
 
 

@@ -209,10 +209,10 @@ p {
     margin-top: 20px;
 }
 .post-img{
-    padding: 200px 0;
     background-color: #e1e1e1;
     border-radius: 20px;
     margin: 22px 0;
+    text-align: center;
 }
 .post-comments{
     display: flex;
@@ -242,7 +242,22 @@ p {
     margin: auto;
 }
 
+.subir-img{
+    margin: 10px 0;
 
+}
+
+.post-descripcion {
+    margin: 26px 0;
+}
+
+.upload-txt{
+
+}
+
+.upload-container {
+    margin: 20px 0 40px;
+}
 
 /*-----------------------------------------------FEED---------------------------------------------------*/
 #columnacentral{

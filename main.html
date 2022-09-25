@@ -89,33 +89,25 @@
 
 
 
-                        <div class="container">
-                            <h1 class="titulo">Nueva Publicación</h1>                         
-                        </div>
-
-                        <div class="container">
-
-                             <div class="container">
-                                <p>Seleccione un archivo de foto, video o pdf para publicar.</p>
-                            </div>
-                            <div class="seleccionados">
-                              
-                                <!--BOTON de SELECCIONAR Archivos-->
-                                <button class="container-fluid"> 
-                                        <a href=""><i class="fas fa-plus-circle"></i></a>
-                                </button>
-                            </div>
-                        </div>
-
+                        <form method="post" action="main.html" class="form-container" enctype="multipart/form-data">
+                
+                    <div class="container subir-img">
+                        <h1 class="titulo">Subir imagen</h1>
+                            <div class="container upload-container">
+	                              <input type="file" name="perfil" class="uploadFile" value="Upload Photo">
+                        	</div>
+                    </div>
+                    <div class="container post-descripcion">
+                        <label for="descripcion"><b>Descripción del post</b></label>
+                        <br>
+                        <textarea name="descripcion" rows="5" cols="30"></textarea>
+                        <br>
+                        <button type="submit" name="enviar" value="submit" class="btn btn-blue">Listo</button>
+                        <input href="#" type="submit" data-dismiss="modal" aria-label="Close" value="Cancelar" class="btn-red cerrar">
+                    </div>
+                
+              </form>
                         
-
-                        <div class="publicarCancelar">
-
-                            <!--Botones para PUBLICAR o CANCELAR el post-->
-							<input href="#" type="submit" value="Publicar" class="btn-blue">
-                            <input href="#" type="submit" data-dismiss="modal" aria-label="Close" value="Cancelar" class="btn-red cerrar">
-                            
-							</div>
 
 
 
@@ -416,6 +408,34 @@
             pageDots: false
         });
 
+    </script>
+
+    <script>
+        $(".imgAdd").click(function(){
+            $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
+        });
+        $(document).on("click", "i.del" , function() {
+            $(this).parent().remove();
+        });
+        $(function() {
+            $(document).on("change",".uploadFile", function()
+            {
+                var uploadFile = $(this);
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+                if (/^image/.test( files[0].type)){ // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+
+                    reader.onloadend = function(){ // set image data as background of div
+                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
+                    }
+                }
+
+            });
+        });
     </script>
 </body>
 </html>
