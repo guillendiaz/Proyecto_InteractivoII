@@ -183,8 +183,9 @@
 </div>
 
 
-	<!--<script src="js/framework7.bundle.min.js"></script>
-	<script src="js/app.js"></script> -->
+
+	<script src="js/framework7.bundle.min.js"></script>
+	<script src="js/app.js"></script>
 
 	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>

@@ -18,11 +18,11 @@ var app = new Framework7({
   	routes: [
 		{
 		path: '/main/',
-    	url: 'main.html',
+    	url: 'main.php',
     	name: 'main',
   		}
 	],
-	
+
 	popup: {
 		closeOnEscape: true,
 		backdrop : false
@@ -36,19 +36,4 @@ var app = new Framework7({
 	actions: {
 		closeOnEscape: true,
 	}
-});
-
-
-
-$$('#btnLogin').on('click', function (e) {
-	e.preventDefault();
-	
-	var $valid = $$('#form-login')[0].checkValidity();
-	if ($valid){
-        $$('#form-login').trigger('reset');	
-        app.loginScreen.close('#modal-login');
-		
-		app.dialog.alert('¡ Bienvenido a la App de Animacion !');
-    }
-	
 });
