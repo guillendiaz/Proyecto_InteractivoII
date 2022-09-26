@@ -1,4 +1,4 @@
-<?php 
+<?php
 //comprobar que los campos esten llenos
 function emptyInputSignup($nombre, $apellido, $email, $nucuenta, $pwd, $confpwd){
 $result;
@@ -101,6 +101,12 @@ return $result;
 function loginUser($conn, $email, $nucuenta, $pwd){
 
 		session_start();
+		$query = "SELECT ID, nombre, apellido, num_cuenta, num_telefono, correo, contrasenia FROM usuarios WHERE correo = '$email' && contrasenia = '$pwd' ";
+    $result = $conn->query($query);
+
+    if (!$result) die("Fatal Error");
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+
 		$_SESSION['id'] = $row['ID'];
         $_SESSION['Nom'] = $row['nombre'];
         $_SESSION['Apel'] = $row['apellido'];
@@ -109,13 +115,6 @@ function loginUser($conn, $email, $nucuenta, $pwd){
         $_SESSION['Correo'] = $row['correo'];
         $_SESSION['Contra'] = $row['contrasenia'];
 
-		$_SESSION['id'] = $row['ID'];
-        $_SESSION['Nom'] = $row['nombre'];
-        $_SESSION['Apel'] = $row['apellido'];
-        $_SESSION['N_Cuenta'] = $row['num_cuenta'];
-        $_SESSION['N_Tel'] = $row['num_telefono'];
-        $_SESSION['Correo'] = $row['correo'];
-        $_SESSION['Contra'] = $row['contrasenia'];}
 
 		$sql = "SELECT count(*) as 'contar' FROM usuarios WHERE correo = '$email' and num_cuenta = '$nucuenta' and contrasenia = '$pwd'";
 		$consulta = mysqli_query($conn, $sql);
@@ -130,3 +129,4 @@ function loginUser($conn, $email, $nucuenta, $pwd){
 
 		exit();
 	}
+}
