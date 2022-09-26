@@ -7,6 +7,7 @@ session_start();
 require_once 'includes/funciones.inc.php';
 require_once 'includes/dbh.inc.php';
 
+
 $sql = "SELECT imgId FROM historias ORDER BY imgId DESC";
 $result = mysqli_query($conn, $sql);
 
@@ -160,12 +161,12 @@ $result = mysqli_query($conn, $sql);
                                         <a href=""><i class="fas fa-plus-circle"></i></a>
                                 </button>
                                 <h1>Prueba subir historia</h1>
-                                    <form method='post' action='main.html' enctype='multipart/form-data'>
-                                          <strong>Seleccionar Imagen:</strong>
-                                          <input type='file' name='filename' size="10">
-                                          <p><input type='submit' value'upload' name="enviar_historias"></p>
-
-                                    </form>
+                                <form name="frmImage" enctype="multipart/form-data" action="inserthistoria.php"
+                                  method="post" class="frmImageUpload">
+                                  <label>Subir Archivo de Imagen:</label><br>
+                                  <input name="userImage" type="file" class="inputFile">
+                                  <input type="submit" value="Submit" class="btnSubmit" />
+                                </form>
                             </div>
                         </div>
 
@@ -221,7 +222,7 @@ $result = mysqli_query($conn, $sql);
                 <?php
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
-                <div class="carousel-cell"><img src="imgvista.php?image_id=<?php echo $row["imgId"]; ?>" class="img-fluid"></div>    
+                <div class="carousel-cell"><img src="imgvista.php?image_id=<?php echo $row["imgId"]; ?>" class="img-fluid"></div>
                 <?php
                 }
                 mysqli_close($conn);
