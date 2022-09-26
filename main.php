@@ -5,6 +5,10 @@ error_reporting(E_ALL);
 
 session_start();
 require_once 'includes/funciones.inc.php';
+require_once 'includes/dbh.inc.php';
+
+$sql = "SELECT imgId FROM historias ORDER BY imgId DESC";
+$result = mysqli_query($conn, $sql);
 
   ?>
 <!DOCTYPE html>
@@ -214,6 +218,15 @@ require_once 'includes/funciones.inc.php';
                     <img src="images/1.png" alt="historia">
                      <div class="pfoto"><img src="images/Haslin.png" class="img-fluid" alt="gay"></div>
                 </div>
+                <?php
+                while ($row = mysqli_fetch_array($result)) {
+                ?>
+                <div class="carousel-cell"><img src="imgvista.php?image_id=<?php echo $row["imgId"]; ?>" class="img-fluid"></div>    
+                <?php
+                }
+                mysqli_close($conn);
+                ?>
+                <!--
                 <div class="carousel-cell"></div>
                 <div class="carousel-cell"></div>
                 <div class="carousel-cell"></div>
@@ -222,7 +235,7 @@ require_once 'includes/funciones.inc.php';
                 <div class="carousel-cell"></div>
                 <div class="carousel-cell"></div>
                 <div class="carousel-cell"></div>
-                <div class="carousel-cell"></div>
+            -->
               </div>
 
 
