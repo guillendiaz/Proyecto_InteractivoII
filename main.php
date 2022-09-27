@@ -35,7 +35,7 @@ $resultpost = mysqli_query($conn, $sqlpost);
         <nav id="navbar-side">
             <ul>
                 <li>
-                    <a href="main.html" class="logo-sidebar">
+                    <a href="main.php" class="logo-sidebar">
                         <img src="images/unitec_mini.png" class="img-fluid logo-unitec" alt="unitec_mini">
                     </a>
                 </li>
@@ -45,7 +45,7 @@ $resultpost = mysqli_query($conn, $sqlpost);
                          <span class="nav-item"><?php echo $_SESSION['Nom']." ".$_SESSION['Apel'];?></span>
                     </a>
                 </li>
-                <li class="nav-2"><a href="main.html" class="icon-sidebar">
+                <li class="nav-2"><a href="main.php" class="icon-sidebar">
                     <i class="fas fa-home"></i>
                     <span class="nav-item">Home</span>
                 </a></li>
@@ -170,7 +170,7 @@ $resultpost = mysqli_query($conn, $sqlpost);
 
                             <!--Botones para PUBLICAR o CANCELAR el post-->
 
-                          
+
 
 							</div>
 
