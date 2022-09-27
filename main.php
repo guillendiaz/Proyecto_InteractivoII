@@ -7,9 +7,11 @@ session_start();
 require_once 'includes/funciones.inc.php';
 require_once 'includes/dbh.inc.php';
 
-
 $sql = "SELECT imgId FROM historias ORDER BY imgId DESC";
 $result = mysqli_query($conn, $sql);
+
+$sqlpost = "SELECT ID, descripcion FROM posts ORDER BY ID DESC";
+$resultpost = mysqli_query($conn, $sqlpost);
 
   ?>
 <!DOCTYPE html>
@@ -47,7 +49,7 @@ $result = mysqli_query($conn, $sql);
                     <i class="fas fa-home"></i>
                     <span class="nav-item">Home</span>
                 </a></li>
-                <li class="nav-3"><a href="#" class="icon-sidebar">
+                <li class="nav-3"><a href="insbloppost.php" class="icon-sidebar">
                     <i class="fas fa-calendar "></i>
                     <span class="nav-item">Calendario</span>
                 </a></li>
@@ -103,11 +105,11 @@ $result = mysqli_query($conn, $sql);
 					    <div class="modal-body p-4 p-md-5">
 
 
-					    	<form method="post" action="main.html" class="form-container" enctype="multipart/form-data">
+					    	<form method="post" action="insbloppost.php" class="form-container" enctype="multipart/form-data">
 			                    <div class="container subir-img">
 			                        <h1 class="titulo">Subir imagen</h1>
 			                            <div class="container upload-container">
-				                              <input type="file" name="perfil" class="uploadFile" value="Upload Photo">
+				                              <input type="file" name="postImage" class="uploadFile" value="Upload Photo">
 			                        	</div>
 			                    </div>
 			                    <div class="container post-descripcion">
@@ -115,15 +117,10 @@ $result = mysqli_query($conn, $sql);
 			                        <br>
 			                        <textarea name="descripcion" rows="5" cols="30"></textarea>
 			                        <br>
-			                        <button type="submit" name="enviar" value="submit" class="btn btn-blue">Listo</button>
+			                        <button type="submit" name="submit" value="submit" class="btn btn-blue">Listo</button>
 			                        <input href="#" type="submit" data-dismiss="modal" aria-label="Close" value="Cancelar" class="btn-red cerrar">
 			                    </div>
               				</form>
-
-
-
-
-
 
 			            </div>
 				    </div>
@@ -144,7 +141,6 @@ $result = mysqli_query($conn, $sql);
 					    <div class="modal-body p-4 p-md-5">
 
 
-
                         <div class="container">
                             <h1 class="titulo">Nueva Historia</h1>
                         </div>
@@ -161,12 +157,12 @@ $result = mysqli_query($conn, $sql);
                                         <a href=""><i class="fas fa-plus-circle"></i></a>
                                 </button>
                                 <h1>Prueba subir historia</h1>
-                                <form name="frmImage" enctype="multipart/form-data" action="inserthistoria.php"
-                                  method="post" class="frmImageUpload">
-                                  <label>Subir Archivo de Imagen:</label><br>
-                                  <input name="userImage" type="file" class="inputFile">
-                                  <input type="submit" value="Submit" class="btnSubmit" />
-                                </form>
+                                    <form method='post' action='main.html' enctype='multipart/form-data'>
+                                          <strong>Seleccionar Imagen:</strong>
+                                          <input type='file' name='filename' size="10">
+                                          <p><input type='submit' value'upload' name="enviar_historias"></p>
+
+                                    </form>
                             </div>
                         </div>
 
@@ -222,49 +218,12 @@ $result = mysqli_query($conn, $sql);
                 <?php
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
-                <div class="carousel-cell"><img src="imgvista.php?image_id=<?php echo $row["imgId"]; ?>" class="img-fluid"></div>
+                <div class="carousel-cell"><img src="imgvista.php?image_id=<?php echo $row["imgId"]; ?>" class="img-fluid"></div>    
                 <?php
                 }
                 mysqli_close($conn);
                 ?>
-                <!--
-                <div class="carousel-cell"></div>
-                <div class="carousel-cell"></div>
-                <div class="carousel-cell"></div>
-                <div class="carousel-cell"></div>
-                <div class="carousel-cell"></div>
-                <div class="carousel-cell"></div>
-                <div class="carousel-cell"></div>
-                <div class="carousel-cell"></div>
-            -->
               </div>
-
-
-
-
- <!----------------------------------------reaciones------------------------------------------>
-	 <!-----<div class="container  post-comments">
-		 <i class="fas fa-thumbs-up like"></i> <p>reacciones</p>
-		<div class="content">
-			<div class="emoji">
-
-				<div class="hello">
-					<a href="#" class="btn"><img src="images/emoji_risa.png"></a>
-				</div>
-				<div class="hello">
-					<a href="#" class="btn"><img src="images/emoji_alegria.png"></a>
-				</div>
-				<div class="hello">
-					<a href="#" class="btn"><img src="images/emoji_sorpresa.png"></a>
-				</div>
-				<div class="hello">
-					<a href="#" class="btn"><img src="images/emoji_encanto.png"></a>
-				</div>
-
-			</div>
-		</div>
-
-	</div>-->
 
                </section>
 
@@ -275,6 +234,9 @@ $result = mysqli_query($conn, $sql);
 
                         <!-------------------------------Publicacion----------------------------------->
 
+                        <?php
+                        while ($row = mysqli_fetch_array($resultpost)) {
+                        ?>                        
                         <div class="container publicacion">
                             <div class="row post-header">
                                 <article class="col-2">
@@ -282,58 +244,11 @@ $result = mysqli_query($conn, $sql);
                                 </article>
                                 <article class="col-10 container-fluid">
                                         <h1 class="titulo"><?php echo $_SESSION['Nom'].' '.$_SESSION['Apel']; ?></h1>
-                                        <p><?php echo $descripcion; ?></p>
+                                        <p><?php echo $row['descripcion']; ?></p>
                                 </article>
                             </div>
                             <div class="post-img">
-                                <img src="<?php echo $imgUser;?>" class="img-fluid">
-                            </div>
-
-                            <div class="container post-comments">
-
-                                <i class="fas fa-thumbs-up like content"> Reacciones</i>
-
-								<div class="emoji">
-
-									<div class="hello">
-										<a href="#" class="btn"><img src="images/emoji_risa.png"></a>
-									</div>
-									<div class="hello">
-										<a href="#" class="btn"><img src="images/emoji_alegria.png"></a>
-									</div>
-									<div class="hello">
-										<a href="#" class="btn"><img src="images/emoji_sorpresa.png"></a>
-									</div>
-									<div class="hello">
-										<a href="#" class="btn"><img src="images/emoji_encanto.png"></a>
-									</div>
-
-								</div>
-
-
-
-
-
-
-
-
-
-								<i class="fas fa-comment-dots like"></i> <p>comments</p>
-                            </div>
-                        </div>
-
-                        <div class="container publicacion">
-                            <div class="row post-header">
-                                <article class="col-2">
-                                    <img src="images/baba.jpg" class="img-fluid post-profile" alt="Profile-user">
-                                </article>
-                                <article class="col-10 container-fluid">
-                                        <h1 class="titulo">Nombre Generico</h1>
-                                        <p>Aqui va el texto para el post #blessed #GOAT</p>
-                                </article>
-                            </div>
-                            <div class="post-img">
-                                <img src="">
+                                <img src="imgvistapost.php?image_id=<?php echo $row["ID"]; ?>" class="img-fluid">                         
                             </div>
 
                               <div class="container post-comments">
@@ -356,64 +271,15 @@ $result = mysqli_query($conn, $sql);
 									</div>
 
 								</div>
-
-
+                                
 								</i>
-
-
-
-
 
 								<i class="fas fa-comment-dots like"></i> <p>comments</p>
                             </div>
                         </div>
-
-                        <div class="container publicacion">
-                            <div class="row post-header">
-                                <article class="col-2">
-                                    <img src="images/baba.jpg" class="img-fluid post-profile" alt="Profile-user">
-                                </article>
-                                <article class="col-10">
-                                        <h1 class="titulo">Nombre Generico</h1>
-                                        <p>Aqui va el texto para el post #blessed #GOAT</p>
-                                </article>
-                            </div>
-                            <div class="post-img">
-                                <img src="">
-                            </div>
-
-                              <div class="container post-comments">
-
-                                <i class="fas fa-thumbs-up like content"> Reacciones
-
-								<div class="emoji">
-
-									<div class="hello">
-										<a href="#" class="btn"><img src="images/emoji_risa.png"></a>
-									</div>
-									<div class="hello">
-										<a href="#" class="btn"><img src="images/emoji_alegria.png"></a>
-									</div>
-									<div class="hello">
-										<a href="#" class="btn"><img src="images/emoji_sorpresa.png"></a>
-									</div>
-									<div class="hello">
-										<a href="#" class="btn"><img src="images/emoji_encanto.png"></a>
-									</div>
-
-								</div>
-
-
-								</i>
-
-
-
-
-
-								<i class="fas fa-comment-dots like"></i> <p>comments</p>
-                            </div>
-                        </div>
-
+                        <?php
+                        }
+                        ?>
 
                </section>
 
