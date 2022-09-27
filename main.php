@@ -148,21 +148,19 @@ $resultpost = mysqli_query($conn, $sqlpost);
                         <div class="container">
 
                              <div class="container">
-                                <p>Seleccione un archivo de foto, video o pdf para publicar.</p>
+                                <p>Seleccione un archivo de foto.</p>
                             </div>
                             <div class="seleccionados">
 
                                 <!--BOTON de SELECCIONAR Archivos-->
-                                <button class="container-fluid">
-                                        <a href=""><i class="fas fa-plus-circle"></i></a>
-                                </button>
-                                <h1>Prueba subir historia</h1>
-                                    <form method='post' action='main.html' enctype='multipart/form-data'>
-                                          <strong>Seleccionar Imagen:</strong>
-                                          <input type='file' name='filename' size="10">
-                                          <p><input type='submit' value'upload' name="enviar_historias"></p>
 
-                                    </form>
+
+                                <form name="frmImage" enctype="multipart/form-data" action="inserthistoria.php"
+                                  method="post" class="frmImageUpload">
+                                  <label>Subir Archivo de Imagen:</label><br>
+                                  <input name="userImage" type="file" class="inputFile">
+                                  <input type="submit" value="Submit" class="btnSubmit" />
+                                </form>
                             </div>
                         </div>
 
@@ -171,8 +169,8 @@ $resultpost = mysqli_query($conn, $sqlpost);
                         <div class="publicarCancelar">
 
                             <!--Botones para PUBLICAR o CANCELAR el post-->
-							<input href="#" type="submit" value="Publicar" class="btn-blue">
-                            <input href="#" type="submit" value="Cancelar" class="btn-red cerrar">
+
+                          
 
 							</div>
 
@@ -218,7 +216,7 @@ $resultpost = mysqli_query($conn, $sqlpost);
                 <?php
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
-                <div class="carousel-cell"><img src="imgvista.php?image_id=<?php echo $row["imgId"]; ?>" class="img-fluid"></div>    
+                <div class="carousel-cell"><img src="imgvista.php?image_id=<?php echo $row["imgId"]; ?>" class="img-fluid"></div>
                 <?php
                 }
                 mysqli_close($conn);
@@ -236,7 +234,7 @@ $resultpost = mysqli_query($conn, $sqlpost);
 
                         <?php
                         while ($row = mysqli_fetch_array($resultpost)) {
-                        ?>                        
+                        ?>
                         <div class="container publicacion">
                             <div class="row post-header">
                                 <article class="col-2">
@@ -248,7 +246,7 @@ $resultpost = mysqli_query($conn, $sqlpost);
                                 </article>
                             </div>
                             <div class="post-img">
-                                <img src="imgvistapost.php?image_id=<?php echo $row["ID"]; ?>" class="img-fluid">                         
+                                <img src="imgvistapost.php?image_id=<?php echo $row["ID"]; ?>" class="img-fluid">
                             </div>
 
                               <div class="container post-comments">
@@ -271,7 +269,7 @@ $resultpost = mysqli_query($conn, $sqlpost);
 									</div>
 
 								</div>
-                                
+
 								</i>
 
 								<i class="fas fa-comment-dots like"></i> <p>comments</p>
